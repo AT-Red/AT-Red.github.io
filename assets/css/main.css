@@ -2852,6 +2852,34 @@
 
 			}
 
+		div.reference {
+			position: relative;
+			list-style: none;
+			padding: 1em 0 0 0;
+			margin: 0;
+			height: 100%;
+			text-align: justify;
+			text-justify: inter-word;
+		}
+			
+			div.reference > h3 {
+				text-align: right;
+				vertical-align: bottom;
+				bottom: 0px;
+			}
+				
+			@media screen and (min-width: 980px) {
+				div.reference {
+					padding: 1em 0 2em 0;
+				}
+				
+				div.reference > h3 {
+					position: absolute;
+					bottom: 0px;
+					right: 0px;
+				}
+			}
+			
 		ul.contact {
 			list-style: none;
 			padding: 0;
@@ -2954,46 +2982,40 @@
 
 		.split > * {
 			width: calc(50% - 2.5em);
-		}
-
-		.split > :nth-child(2n - 1) {
+			padding-left: 2.5em;
 			padding-right: 2.5em;
+		}
+		
+		.split > :not(:last-child) {
 			border-right: solid 1px rgba(255, 255, 255, 0.15);
 		}
 
-		.split > :nth-child(2n) {
-			padding-left: 2.5em;
-		}
-
-		.split.style1 > :nth-child(2n - 1) {
+		/*.split.style1 > :nth-child(2n - 1) {
 			width: calc(66.66666% - 2.5em);
 		}
 
 		.split.style1 > :nth-child(2n) {
 			width: calc(33.33333% - 2.5em);
-		}
+		}*/
 
 		@media screen and (max-width: 1680px) {
 
 			.split > * {
 				width: calc(50% - 2em);
 			}
-
-			.split > :nth-child(2n - 1) {
-				padding-right: 2em;
+			
+			.split > * > * {
+				padding-right: 2.5em;
+				padding-left: 2.5em;
 			}
 
-			.split > :nth-child(2n) {
-				padding-left: 2em;
-			}
-
-			.split.style1 > :nth-child(2n - 1) {
+			/*.split.style1 > :nth-child(2n - 1) {
 				width: calc(66.66666% - 2em);
 			}
 
 			.split.style1 > :nth-child(2n) {
 				width: calc(33.33333% - 2em);
-			}
+			}*/
 
 		}
 
@@ -3005,18 +3027,13 @@
 
 				.split > * {
 					border-top: solid 1px rgba(255, 255, 255, 0.15);
-					margin: 4em 0 0 0;
-					padding: 4em 0 0 0;
+					margin: 2em 0;
+					padding: 2em;
 					width: 100% !important;
 				}
 
-				.split > :nth-child(2n - 1) {
+				.split > :not(:last-child) {
 					border-right: 0;
-					padding-right: 0;
-				}
-
-				.split > :nth-child(2n) {
-					padding-left: 0;
 				}
 
 				.split > :first-child {
@@ -3024,14 +3041,19 @@
 					margin-top: 0;
 					padding-top: 0;
 				}
+				
+				.split > :last-child {
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
 
 		}
 
 		@media screen and (max-width: 736px) {
 
 			.split > * {
-				margin: 3em 0 0 0;
-				padding: 3em 0 0 0;
+				margin: 1em 0;
+				padding: 1em;
 			}
 
 		}
